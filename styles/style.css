@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    padding: 0 156px;
+    height: 72px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: 0 1px 6px 0 #2E2F4214;
+
+}
+
+.navbar-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.logo img {
+    max-height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    margin-left: 76px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-link {
+    color: #2E2F42;
+    font-weight: 500;
+    text-decoration: none;
+    margin-right: 40px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.user-info__field {
+    margin-left: 40px;
+    color: #434455;
+}
+
+.intro {
+    position: relative;
+    background: url("../img/intro.png") center/cover no-repeat;;
+    max-width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2E2F42B2;
+    opacity: 0.7;
+}
+
+.intro-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-content h2 {
+    margin-bottom: 48px;
+}
+
+.intro-content__title {
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: 56px;
+}
+
+.intro-content__btn {
+    width: 169px;
+    height: 56px;
+    background: #4D5AE5;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+main {
+    flex: 1;
+}
+
+.main-content__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.pillars-card {
+    width: 264px;
+    height: 224px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.pillars-card__img {
+    width: 264px;
+    height: 112px;
+    border-radius: 4px;
+}
+
+.main-card__title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+
+.main-card__descript {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    text-align: left;
+
+}
+
+.main-content__wrapper {
+    margin: 120px 156px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title {
+    margin-bottom: 72px;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+.activity-media {
+    display: flex;
+    justify-content: space-between;
+}
+
+.activity-media__img {
+    width: 360px;
+    height: 300px;
+}
+
+.team {
+    background: #F4F4FD;
+}
+
+.team > div {
+    padding: 120px 0;
+}
+
+.teammate-card {
+    width: 264px;
+    height: 428px;
+    background: white;
+    box-shadow: 0 2px 1px 0 #2E2F4214;
+}
+
+.teammate-card__img {
+    width: 264px;
+    height: 260px;
+}
+
+.teammate-card__fields {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 16px;
+    align-items: center;
+}
+
+
+.teammate-card__fields > div {
+    flex: 1;
+}
+
+.teammate-card__fields > div:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+
+.customer-card {
+    width: 168px;
+    height: 88px;
+    border-radius: 4px;
+    border: 1px solid #8E8F99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-cards__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); /* Создаем колонки с минимальной шириной 300px, заполняя доступное пространство */
+    grid-gap: 24px 48px; /* Отступы между карточками (справа и снизу) */
+}
+
+
+.portfolio-card:nth-child(n) {
+    margin-right: 0;
+}
+
+/* Убираем отступы снизу у последнего ряда */
+.portfolio-card:nth-last-child(-n+3) {
+    margin-bottom: 0;
+}
+
+.portfolio-card {
+    width: 360px;
+    height: 420px;
+    border: 1px solid #E7E9FC;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.portfolio-card:hover {
+    box-shadow: 0px 2px 1px 0px #2E2F4214,
+    0px 1px 1px 0px #2E2F4229,
+    0px 1px 6px 0px #2E2F4214;
+
+
+}
+
+.portfolio-card__img {
+    width: 360px;
+    height: 300px;
+}
+
+.portfolio-card__fields {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 16px;
+}
+
+.portfolio-card__fields > div {
+    flex: 1;
+}
+
+.portfolio-card__fields > div:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+footer {
+    width: 100%;
+    height: 312px;
+    background: #2E2F42;
+    display: flex;
+    position: relative;
+    margin-top: auto;
+}
+
+.footer-wrapper {
+    padding: 100px 156px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-wrapper__container {
+    font-weight: 400;
+    color: white;
+    font-size: 16px;
+}
+
+.footer-legend {
+    width: 264px;
+    height: 112px;
+    font-size: 16px;
+}
+
+.footer-title {
+    font-weight: 500;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.footer-subscribe {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-input {
+    background-color: transparent;
+    border: white 1px solid;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: white;
+    width: 264px;
+    height: 40px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+    text-align: left;
+    margin-right: 24px;
+}
+
+.footer-input::placeholder {
+    color: white;
+}
+
+.footer-btn {
+    width: 165px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: #4D5AE5;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 24px;
+}
+
+.media-circles__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 208px;
+}
+
+.media-circle {
+    width: 40px;
+    height: 40px;
+    background: #4D5AE5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.media-circle img {
+    width: 24px;
+    height: 24px;
+}
