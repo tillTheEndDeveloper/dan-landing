@@ -3,18 +3,20 @@
 let navLinks = document.querySelectorAll('.navbar-link');
 
 navLinks.forEach((link) => {
-    // Получить атрибут href для каждой ссылки
     let linkPath = link.getAttribute('href');
 
-    // Получить относительный путь страницы из текущего URL
     let currentPagePath = window.location.pathname.split('/').pop();
 
-    // Проверить, соответствует ли текущий путь относительному пути ссылки
-    if (currentPagePath === linkPath) {
-        // Если да, добавить класс "test" (или "active")
+    if (currentPagePath === '' || currentPagePath === '/') {
+        if (linkPath === 'index.html') {
+            link.classList.add('active');
+        }
+    }
+    else if (currentPagePath === linkPath) {
         link.classList.add('active');
     }
 });
+
 
 
 //modal window
