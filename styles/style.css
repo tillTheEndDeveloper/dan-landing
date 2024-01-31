@@ -65,7 +65,7 @@ nav {
     transition: 0.2s;
 }
 
-.navbar-link.active::after{
+.navbar-link.active::after {
     content: "";
     display: flex;
     flex-direction: column;
@@ -78,7 +78,7 @@ nav {
     left: 0;
 }
 
-.navbar-link.active{
+.navbar-link.active {
     color: #404BBF;
 }
 
@@ -133,7 +133,7 @@ nav {
     font-size: 56px;
 }
 
-.intro-content__btn {
+.main-submit__btn {
     width: 169px;
     height: 56px;
     background: #4D5AE5;
@@ -142,10 +142,156 @@ nav {
     font-size: 16px;
     border: none;
     cursor: pointer;
+    box-shadow: 0px 4px 4px 0px #00000026;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99999;
+    background-color: rgba(0, 0, 0, .3);
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    overflow-y: auto; /* optional scroll */
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s, visibility .4s;
+}
+
+.modal__box {
+    position: relative;
+    width: 408px;
+    padding: 24px;
+    z-index: 1;
+    background-color: white;
+    border-radius: 4px;
+    transform: scale(0);
+    transition: transform .8s;
+}
+
+.modal.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal.open .modal__box {
+    transform: scale(1);
+}
+
+.modal__form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal__form-fields> div:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.modal__form-fields{
+    margin-bottom: 24px;
+}
+
+.modal__form-title{
+    margin-bottom: 16px;
+}
+
+.modal__form-input {
+    all: unset;
+    margin-left: 4px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.modal__form-input::placeholder{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+    text-align: left;
+    color: #8E8F99;
+}
+
+.modal__form-input-wrapper{
+    width: 100%;
+}
+
+.modal__form-input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #2E2F4266;
+    border-radius: 1px;
+    padding: 11px 16px;
+}
+
+.modal__form-input-comment{
+    height: 120px;
+    border: 1px solid #2E2F4266;
+    border-radius: 1px;
+    padding: 11px 16px;
+}
+
+.modal__form-descript{
+    color: #8E8F99;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    text-align: left;
+}
+
+.privacy-policy{
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.privacy-policy__checkbox{
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    border-radius: 2px;
+    border: 1px solid #2E2F4266;
 }
 
 main {
     flex: 1;
+}
+
+.modal__close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 20px;
+    margin: 0 0 24px auto;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.modal__form-title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #2E2F42;
 }
 
 .main-content__container {
@@ -261,18 +407,13 @@ main {
 }
 
 .portfolio-cards__wrapper {
-    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Создаем колонки с минимальной шириной 300px, заполняя доступное пространство */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 24px 48px; /* Отступы между карточками (справа и снизу) */
-    margin: 0 auto;
 }
 
 
-
 .portfolio-card {
-    width: 360px;
-    height: 420px;
     border: 1px solid #E7E9FC;
     display: flex;
     flex-direction: column;
@@ -280,7 +421,7 @@ main {
     transition: 0.2s;
 }
 
-.portfolio-menu{
+.portfolio-menu {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -291,7 +432,7 @@ main {
     margin-right: 24px;
 }
 
-.portfolio-btn{
+.portfolio-btn {
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -327,8 +468,7 @@ main {
 }
 
 .portfolio-card__img {
-    width: 360px;
-    height: 300px;
+    width: 100%;
 }
 
 .portfolio-card__fields {
@@ -344,6 +484,7 @@ main {
 .portfolio-card__fields > div:not(:last-child) {
     margin-bottom: 8px;
 }
+
 
 footer {
     width: 100%;
@@ -442,4 +583,15 @@ footer {
 .media-circle img {
     width: 24px;
     height: 24px;
+}
+
+
+/*mobile*/
+@media (max-width: 428px) {
+
+}
+
+/* tablet */
+@media (min-width: 429px) and (max-width: 768px) {
+
 }

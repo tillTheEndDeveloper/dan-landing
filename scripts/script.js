@@ -1,3 +1,5 @@
+//active current navbar link
+
 let navLinks = document.querySelectorAll('.navbar-link');
 
 navLinks.forEach((link) => {
@@ -11,6 +13,23 @@ navLinks.forEach((link) => {
     if (currentPagePath === linkPath) {
         // Если да, добавить класс "test" (или "active")
         link.classList.add('active');
+    }
+});
+
+
+//modal window
+document.getElementById("open-modal-btn").addEventListener("click", function (){
+    document.getElementById("my-modal").classList.add("open")
+})
+
+document.getElementById("close-model-btn").addEventListener("click", function (){
+    document.getElementById("my-modal").classList.remove("open")
+})
+
+window.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+        // Действие при клике
+        document.getElementById("my-modal").classList.remove("open")
     }
 });
 
