@@ -1,21 +1,18 @@
 //active current navbar link
 
 let navLinks = document.querySelectorAll('.navbar-link');
+let currentPagePath = window.location.pathname.split('/').pop();
 
-navLinks.forEach((link) => {
-    let linkPath = link.getAttribute('href');
-
-    let currentPagePath = window.location.pathname.split('/').pop();
-
-    if (currentPagePath === '' || currentPagePath === '/') {
-        if (linkPath === 'index.html') {
+if (currentPagePath === "") {
+    navLinks[0].classList.add('active');
+} else {
+    navLinks.forEach((link) => {
+        let linkPath = link.getAttribute('href');
+        if (currentPagePath === linkPath) {
             link.classList.add('active');
         }
-    }
-    else if (currentPagePath === linkPath) {
-        link.classList.add('active');
-    }
-});
+    });
+}
 
 
 
