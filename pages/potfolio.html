@@ -11,145 +11,170 @@
     <title>Portfolio</title>
 </head>
 <body>
-
-<header>
-    <div class="navbar">
-        <div class="navbar-wrapper">
+<div class="body-wrapper">
+    <header>
+        <div class="navbar">
             <div class="logo"><img src="../img/logo.svg"></div>
-            <nav>
-                <a class="navbar-link" href="../index.html">Studio</a>
-                <a class="navbar-link" href="potfolio.html">Portfolio</a>
-                <a class="navbar-link" href="#">Contacts</a>
-            </nav>
-        </div>
-        <div class="user-info">
-            <span class="user-info__field" id="email">info@devstudio.com</span>
-            <span class="user-info__field" id="phone">+ 11 (000) 111-11-11</span>
-        </div>
-    </div>
-</header>
 
-<main>
-    <div class="main-content__wrapper">
-        <div class="portfolio-menu">
-            <a href="#" class="portfolio-btn active">All</a>
-            <a href="#" class="portfolio-btn">Web Site</a>
-            <a href="#" class="portfolio-btn">App</a>
-            <a href="#" class="portfolio-btn">Design</a>
-            <a href="#" class="portfolio-btn">Marketing</a>
-        </div>
-        <div class="portfolio-cards__wrapper">
-            <div class="portfolio-card">
-                <img src="../img/portfolio_img/img-8.png" alt="" class="portfolio-card__img">
-                <div class="portfolio-card__fields">
-                    <div class="main-card__title">Banking App Interface Concept</div>
-                    <div class="main-card__descript">App</div>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                <img src="../img/portfolio_img/img-7.png" alt="" class="portfolio-card__img">
-                <div class="portfolio-card__fields">
-                    <div class="main-card__title">Cashless Payment</div>
-                    <div class="main-card__descript">Marketing</div>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                <img src="../img/portfolio_img/img-6.png" alt="" class="portfolio-card__img">
-                <div class="portfolio-card__fields">
-                    <div class="main-card__title">Meditation App</div>
-                    <div class="main-card__descript">App</div>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                <img src="../img/portfolio_img/img-5.png" alt="" class="portfolio-card__img">
-                <div class="portfolio-card__fields">
-                    <div class="main-card__title">Taxi Service</div>
-                    <div class="main-card__descript">Marketing</div>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                <img src="../img/portfolio_img/img-4.png" alt="" class="portfolio-card__img">
-                <div class="portfolio-card__fields">
-                    <div class="main-card__title">Screen Illustrations</div>
-                    <div class="main-card__descript">Design</div>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                <img src="../img/portfolio_img/img-3.png" alt="" class="portfolio-card__img">
-                <div class="portfolio-card__fields">
-                    <div class="main-card__title">Online Courses</div>
-                    <div class="main-card__descript">Marketing</div>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                <img src="../img/portfolio_img/img-2.png" alt="" class="portfolio-card__img">
-                <div class="portfolio-card__fields">
-                    <div class="main-card__title">Instagram Stories Concept</div>
-                    <div class="main-card__descript">Design</div>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                <img src="../img/portfolio_img/img-1.png" alt="" class="portfolio-card__img">
-                <div class="portfolio-card__fields">
-                    <div class="main-card__title">Organic Food</div>
-                    <div class="main-card__descript">Web Site</div>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                <img src="../img/portfolio_img/img-0.png" alt="" class="portfolio-card__img">
-                <div class="portfolio-card__fields">
-                    <div class="main-card__title">Fresh Coffee</div>
-                    <div class="main-card__descript">Web Site</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
+            <button class="header__burger-btn" id="burger-open-btn">
+                <span></span><span></span><span></span>
+            </button>
 
-<footer>
-    <div class="footer-wrapper">
-        <div class="footer-wrapper__container">
-            <div class="footer-legend">
-                <div class="footer-title">
-                    <div class="logo">
-                        <img src="../img/logo-light.svg">
+            <div class="optional-menu__wrapper">
+                <button class="modal__close-btn" id="burger-close-btn">
+                    <img src="../img/form/close-btn.svg" alt="">
+                </button>
+
+                <nav>
+                    <a class="navbar-link" href="../index.html">Studio</a>
+                    <a class="navbar-link" href="potfolio.html">Portfolio</a>
+                    <a class="navbar-link" href="#">Contacts</a>
+                </nav>
+
+                <div class="user-info">
+                    <span class="user-info__field" id="email">info@devstudio.com</span>
+                    <span class="user-info__field" id="phone">+ 11 (000) 111-11-11</span>
+                </div>
+
+                <div class="media-circles__wrapper">
+                    <a href="#" class="media-circle">
+                        <img src="../img/media_icons/instagram.svg" alt="">
+                    </a>
+                    <a href="#" class="media-circle">
+                        <img src="../img/media_icons/twitter.svg" alt="">
+                    </a>
+                    <a href="#" class="media-circle">
+                        <img src="../img/media_icons/facebook.svg" alt="">
+                    </a>
+                    <a href="#" class="media-circle">
+                        <img src="../img/media_icons/linkedin.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-content__wrapper">
+            <div class="portfolio-menu">
+                <a href="#" class="portfolio-btn active">All</a>
+                <a href="#" class="portfolio-btn">Web Site</a>
+                <a href="#" class="portfolio-btn">App</a>
+                <a href="#" class="portfolio-btn">Design</a>
+                <a href="#" class="portfolio-btn">Marketing</a>
+            </div>
+            <div class="portfolio-cards__wrapper">
+                <div class="portfolio-card">
+                    <img src="../img/portfolio_img/img-8.png" alt="" class="portfolio-card__img">
+                    <div class="portfolio-card__fields">
+                        <div class="universal-card__title">Banking App Interface Concept</div>
+                        <div class="main-card__descript">App</div>
                     </div>
                 </div>
-                Increase the flow of customers and sales for your
-                business with digital marketing & growth solutions.
+                <div class="portfolio-card">
+                    <img src="../img/portfolio_img/img-7.png" alt="" class="portfolio-card__img">
+                    <div class="portfolio-card__fields">
+                        <div class="universal-card__title">Cashless Payment</div>
+                        <div class="main-card__descript">Marketing</div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="../img/portfolio_img/img-6.png" alt="" class="portfolio-card__img">
+                    <div class="portfolio-card__fields">
+                        <div class="universal-card__title">Meditation App</div>
+                        <div class="main-card__descript">App</div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="../img/portfolio_img/img-5.png" alt="" class="portfolio-card__img">
+                    <div class="portfolio-card__fields">
+                        <div class="universal-card__title">Taxi Service</div>
+                        <div class="main-card__descript">Marketing</div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="../img/portfolio_img/img-4.png" alt="" class="portfolio-card__img">
+                    <div class="portfolio-card__fields">
+                        <div class="universal-card__title">Screen Illustrations</div>
+                        <div class="main-card__descript">Design</div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="../img/portfolio_img/img-3.png" alt="" class="portfolio-card__img">
+                    <div class="portfolio-card__fields">
+                        <div class="universal-card__title">Online Courses</div>
+                        <div class="main-card__descript">Marketing</div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="../img/portfolio_img/img-2.png" alt="" class="portfolio-card__img">
+                    <div class="portfolio-card__fields">
+                        <div class="universal-card__title">Instagram Stories Concept</div>
+                        <div class="main-card__descript">Design</div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="../img/portfolio_img/img-1.png" alt="" class="portfolio-card__img">
+                    <div class="portfolio-card__fields">
+                        <div class="universal-card__title">Organic Food</div>
+                        <div class="main-card__descript">Web Site</div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="../img/portfolio_img/img-0.png" alt="" class="portfolio-card__img">
+                    <div class="portfolio-card__fields">
+                        <div class="universal-card__title">Fresh Coffee</div>
+                        <div class="main-card__descript">Web Site</div>
+                    </div>
+                </div>
             </div>
         </div>
+    </main>
 
-        <div class="footer-wrapper__container">
-            <div class="footer-title">Social media</div>
-            <div class="media-circles__wrapper">
-                <a href="#" class="media-circle">
-                    <img src="../img/media_icons/instagram.svg" alt="">
-                </a>
-                <a href="#" class="media-circle">
-                    <img src="../img/media_icons/twitter.svg" alt="">
-                </a>
-                <a href="#" class="media-circle">
-                    <img src="../img/media_icons/facebook.svg" alt="">
-                </a>
-                <a href="#" class="media-circle">
-                    <img src="../img/media_icons/linkedin.svg" alt="">
-                </a>
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-wrapper__container">
+                <div class="footer-legend">
+                    <div class="footer-title">
+                        <div class="logo">
+                            <img src="../img/logo-light.svg">
+                        </div>
+                    </div>
+                    Increase the flow of customers and sales for your
+                    business with digital marketing & growth solutions.
+                </div>
+            </div>
+
+            <div class="footer-wrapper__container">
+                <div class="footer-title">Social media</div>
+                <div class="media-circles__wrapper">
+                    <a href="#" class="media-circle">
+                        <img src="../img/media_icons/instagram.svg" alt="">
+                    </a>
+                    <a href="#" class="media-circle">
+                        <img src="../img/media_icons/twitter.svg" alt="">
+                    </a>
+                    <a href="#" class="media-circle">
+                        <img src="../img/media_icons/facebook.svg" alt="">
+                    </a>
+                    <a href="#" class="media-circle">
+                        <img src="../img/media_icons/linkedin.svg" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-wrapper__container">
+                <div class="footer-title">Subscribe</div>
+                <div class="footer-subscribe">
+                    <input class="footer-input" placeholder="E-mail" type="text">
+                    <button class="footer-btn">
+                        Subscribe
+                        <img src="../img/media_icons/send.svg" alt="">
+                    </button>
+                </div>
             </div>
         </div>
-
-        <div class="footer-wrapper__container">
-            <div class="footer-title">Subscribe</div>
-            <div class="footer-subscribe">
-                <input class="footer-input" placeholder="E-mail" type="text">
-                <button class="footer-btn">
-                    Subscribe
-                    <img src="../img/media_icons/send.svg" alt="">
-                </button>
-            </div>
-        </div>
-    </div>
-</footer>
-
+    </footer>
+</div>
 </body>
 </html>

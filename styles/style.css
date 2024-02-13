@@ -7,11 +7,17 @@
     font-family: 'Roboto', sans-serif;
 }
 
-
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
+}
+
+.body-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
 }
 
 header {
@@ -25,7 +31,6 @@ header {
     height: 72px;
     font-size: 16px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     box-shadow: 0px 1px 6px 0px #2E2F4214,
@@ -33,11 +38,7 @@ header {
     0px 2px 1px 0px #2E2F4214;
 }
 
-.navbar-wrapper {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-}
+
 
 .logo img {
     max-height: 24px;
@@ -50,7 +51,10 @@ nav {
     margin-left: 76px;
     display: flex;
     align-items: center;
+    flex: 1;
 }
+
+
 
 .navbar-link {
     color: #2E2F42;
@@ -82,7 +86,12 @@ nav {
     color: #404BBF;
 }
 
+#burger-close-btn {
+    display: none;
+}
+
 .user-info {
+    right: 0;
     display: flex;
     flex-direction: row;
 }
@@ -186,22 +195,22 @@ nav {
     transform: scale(1);
 }
 
-.modal__form{
+.modal__form {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.modal__form-fields> div:not(:last-child) {
+.modal__form-fields > div:not(:last-child) {
     margin-bottom: 8px;
 }
 
-.modal__form-fields{
+.modal__form-fields {
     margin-bottom: 24px;
 }
 
-.modal__form-title{
+.modal__form-title {
     margin-bottom: 16px;
 }
 
@@ -212,7 +221,7 @@ nav {
     font-size: 16px;
 }
 
-.modal__form-input::placeholder{
+.modal__form-input::placeholder {
     font-size: 12px;
     font-weight: 400;
     line-height: 14px;
@@ -221,7 +230,7 @@ nav {
     color: #8E8F99;
 }
 
-.modal__form-input-wrapper{
+.modal__form-input-wrapper {
     width: 100%;
 }
 
@@ -230,19 +239,35 @@ nav {
     flex-direction: row;
     align-items: center;
     border: 1px solid #2E2F4266;
-    border-radius: 1px;
+    border-radius: 4px;
     padding: 11px 16px;
     will-change: transform;
 }
 
-.modal__form-input-comment{
+.modal__form-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.modal__form-input-container:focus-within {
+    border: 1px solid #4D5AE5;
+}
+
+.modal__form-input-container input:focus + .modal__form-icon {
+    filter: invert(31%) sepia(50%) saturate(2616%) hue-rotate(223deg) brightness(93%) contrast(92%);
+}
+
+
+.modal__form-input-comment {
     height: 120px;
     border: 1px solid #2E2F4266;
     border-radius: 1px;
     padding: 11px 16px;
 }
 
-.modal__form-descript{
+.modal__form-descript {
     color: #8E8F99;
     font-size: 12px;
     font-weight: 400;
@@ -251,7 +276,7 @@ nav {
     text-align: left;
 }
 
-.privacy-policy{
+.privacy-policy {
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 0.04em;
@@ -261,7 +286,11 @@ nav {
     margin-top: 16px;
 }
 
-.privacy-policy__checkbox{
+.privacy-policy a {
+    margin-left: 0.25em;
+}
+
+.privacy-policy__checkbox {
     width: 16px;
     height: 16px;
     margin-right: 8px;
@@ -269,16 +298,30 @@ nav {
     border: 1px solid #2E2F4266;
 }
 
+.optional-menu__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.optional-menu__wrapper .media-circles__wrapper{
+    display: none;
+}
+
 main {
     flex: 1;
+    width: 100%;
+    display: flex;
 }
 
 .modal__close-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     margin: 0 0 24px auto;
     background-color: transparent;
     border: none;
@@ -370,10 +413,18 @@ main {
 }
 
 .teammate-card {
-    width: 264px;
-    height: 428px;
+    max-width: 264px;
+    max-height: 428px;
     background: white;
     box-shadow: 0 2px 1px 0 #2E2F4214;
+}
+
+.universal-card__title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    text-align: left;
 }
 
 .teammate-card__img {
@@ -465,8 +516,6 @@ main {
     box-shadow: 0px 2px 1px 0px #2E2F4214,
     0px 1px 1px 0px #2E2F4229,
     0px 1px 6px 0px #2E2F4214;
-
-
 }
 
 .portfolio-card__img {
@@ -490,7 +539,7 @@ main {
 
 footer {
     width: 100%;
-    height: 312px;
+    min-height: 312px;
     background: #2E2F42;
     display: flex;
     position: relative;
@@ -588,12 +637,354 @@ footer {
 }
 
 
-/*mobile*/
-@media (max-width: 428px) {
-
+/*burger*/
+.header__burger-btn {
+    display: none;
+    position: relative; /*система координат*/
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    z-index: 2; /* помещаем кнопку выше */
+    cursor: pointer; /* появляется "рука" */
 }
+
+.header__burger-btn span {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    left: 5px;
+    background-color: #2E2F42;
+    border-radius: 2px;
+}
+
+
+.header__burger-btn:hover span {
+    background-color: rgb(103, 103, 103);
+}
+
+.header__burger-btn span:nth-child(1) { /*для ребёнка этого класса*/
+    transform: translateY(-10px);
+}
+
+.header__burger-btn span:nth-child(3) { /*для ребёнка этого класса*/
+    transform: translateY(10px);
+}
+
+
+.header__burger-btn span:nth-child(1) { /*для ребёнка этого класса*/
+    transform: translateY(-10px);
+}
+
+.header__burger-btn span:nth-child(3) { /*для ребёнка этого класса*/
+    transform: translateY(10px);
+}
+
 
 /* tablet */
-@media (min-width: 429px) and (max-width: 768px) {
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 16px;
+        justify-content: space-between;
+    }
 
+    .logo {
+        flex: 1;
+    }
+
+    nav {
+        margin: 0;
+    }
+
+    .navbar-link:last-child {
+        margin-right: 0;
+    }
+
+    .optional-menu__wrapper {
+        flex: 2;
+    }
+
+    .user-info {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .user-info__field {
+        font-size: 12px;
+    }
+
+    .main-content__wrapper {
+        margin: 96px 16px;
+        flex-wrap: wrap;
+    }
+
+    .pillars-card {
+        height: auto;
+        width: 356px;
+        margin-bottom: 72px;
+        justify-content: left;
+    }
+
+    #pillars-section {
+        margin-bottom: -72px;
+    }
+
+    .pillars-card__img {
+        visibility: hidden;
+        display: none;
+    }
+
+    .main-card__title {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        margin-bottom: 8px;
+    }
+
+    .main-card__descript {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.02em;
+        text-align: left;
+    }
+
+    .main-content__container {
+        flex-wrap: wrap;
+    }
+
+    .footer-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .user-info__field {
+        margin-bottom: 12px;
+    }
+
+    .user-info__field:last-child{
+        margin-bottom: 0;
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+
+
+    #activity-section {
+        display: none;
+    }
+
+    .team {
+        padding: 96px 108px;
+    }
+
+    #team-section {
+        padding: 0;
+        margin: 0 auto -64px auto;
+    }
+
+    .teammate-card {
+        margin-bottom: 64px;
+    }
+
+
+    #customers-section {
+        padding: 0 108px;
+        gap: 72px 24px;
+        justify-content: normal;
+        margin: 0 -16px;
+    }
+
+    .portfolio-menu {
+        margin-top: -32px;
+        margin-bottom: 64px;
+    }
+
+    footer {
+        margin-bottom: -72px;
+    }
+
+    .footer-wrapper {
+        padding: 96px 108px;
+    }
+
+    .footer-wrapper__container {
+        margin-right: 24px;
+        margin-bottom: 72px;
+    }
+
+    .footer-wrapper__container:last-child {
+        margin-bottom: 0;
+    }
 }
+
+/*mobile*/
+@media (max-width: 428px) {
+    .header__burger-btn {
+        display: block;
+    }
+
+    .optional-menu__wrapper {
+        flex-direction: column;
+        position: absolute; /*для того, чтобы двигать*/
+        right: -100%;
+        top: 0;
+        padding-left: 40px;
+        padding-bottom: 40px;
+        width: 100%;
+        align-items: normal;
+        height: 100vh;
+        background-color: white;
+        visibility: hidden;
+        transition: transform .5s, visibility .5s;
+        will-change: transform;
+        z-index: 3;
+    }
+
+
+    .optional-menu__wrapper .media-circles__wrapper{
+        padding: 40px 40px 0 0 ;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    header.open .optional-menu__wrapper {
+        transform: translateX(-100%);
+        visibility: visible;
+    }
+
+    #burger-close-btn {
+        display: block;
+        margin: 32px 32px 32px auto;
+    }
+
+    .user-info{
+        flex-direction: column-reverse;
+    }
+
+    .user-info__field{
+        margin: 0;
+        padding: 0;
+    }
+
+    .user-info__field:last-child{
+        margin: 0 0 40px 0;
+    }
+
+    #phone{
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        color: #4D5AE5;
+    }
+
+    .navbar-link {
+        color: #2E2F42;
+        display: flex;
+        align-items: normal;
+        justify-content: left;
+        margin: 0;
+        position: relative;
+        text-decoration: none;
+        transition: 0.2s;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: 0.02em;
+    }
+
+    .navbar-link.active::after {
+        display: none;
+    }
+
+    .navbar-link.active {
+        color: #404BBF;
+    }
+
+    .pillars-card {
+        align-items: center;
+        justify-content: center;
+        width: auto;
+    }
+
+    .team {
+        padding: 96px 82px;
+    }
+
+    #customers-section {
+        padding: 0;
+        gap: 72px 16px;
+        justify-content: center;
+        margin: 0 -8px;
+    }
+
+
+    .portfolio-cards__wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .portfolio-menu{
+        justify-content: left;
+        gap: 16px 24px;
+        flex-wrap: wrap;
+    }
+
+    .portfolio-menu > a:not(:last-child) {
+        margin: 0;
+    }
+
+    .portfolio-card{
+        max-width: 396px;
+        min-height: 400px;
+    }
+
+
+    .footer-legend {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-wrapper {
+        padding: 96px 15px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-wrapper__container {
+        width: 100%;
+        margin: 0 0 72px 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-subscribe {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .footer-input {
+        width: 200%;
+        margin: 0 0 16px 0;
+    }
+}
+

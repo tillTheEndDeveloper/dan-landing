@@ -15,15 +15,19 @@ if (currentPagePath === "") {
 }
 
 
-
 //modal window
-document.getElementById("open-modal-btn").addEventListener("click", function (){
-    document.getElementById("my-modal").classList.add("open")
-})
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("open-modal-btn").addEventListener("click", function () {
+        document.getElementById("my-modal").classList.add("open");
+    });
+});
 
-document.getElementById("close-model-btn").addEventListener("click", function (){
-    document.getElementById("my-modal").classList.remove("open")
-})
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("open-modal-btn").addEventListener("click", function () {
+        document.getElementById("my-modal").classList.remove("open");
+    });
+});
+
 
 window.addEventListener('keydown', (e) => {
     if (e.key === "Escape") {
@@ -32,55 +36,27 @@ window.addEventListener('keydown', (e) => {
     }
 });
 
-/*
 
-
-document.addEventListener("DOMContentLoaded", function (){
-    document.getElementById("burger").addEventListener("click", function (){
-        document.querySelector("header").classList.toggle("open") /!*
-        тоггл для выключения/включения *!/
+//burger menu
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("burger-open-btn").addEventListener("click", function () {
+        document.querySelector("header").classList.add("open")
     })
-})/!* проверка на загрузку дома *!/
+})/* проверка на загрузку дома */
 
-
-// // Закрыть меню при нажатии на Esc
-// window.addEventListener('keydown', (e) => {
-//     if (e.key === "Escape") {
-//         // Действие при клике
-//         document.querySelector(".header").classList.remove("open")
-//     }
-// });
-
-// Закрыть меню при клике вне его
-document.getElementById("menu").addEventListener('click', event => {
-    event._isClickWithInMenu = true;
-});
-
-document.getElementById("burger").addEventListener('click', event => {
-    event._isClickWithInMenu = true;
-});
-
-document.body.addEventListener('click', event => {
-    if (event._isClickWithInMenu) return;
-    // Действие при клике
-    document.querySelector(".header").classList.remove("open")
-});
-
-//modal
-document.getElementById("open-modal-btn").addEventListener("click", function (){
-    document.getElementById("my-modal").classList.add("open")
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("burger-close-btn").addEventListener("click", function () {
+        document.querySelector("header").classList.remove("open")
+    })
 })
 
-document.getElementById("close-my-model-btn").addEventListener("click", function (){
-    document.getElementById("my-modal").classList.remove("open")
-})
-
+// Закрыть меню при нажатии на Esc
 window.addEventListener('keydown', (e) => {
     if (e.key === "Escape") {
         // Действие при клике
-        document.getElementById("my-modal").classList.remove("open")
+        document.querySelector("header").classList.remove("open")
     }
 });
-*/
+
 
 
