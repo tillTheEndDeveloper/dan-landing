@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("open-modal-btn").addEventListener("click", function () {
+    document.getElementById("close-modal-btn").addEventListener("click", function () {
         document.getElementById("my-modal").classList.remove("open");
     });
 });
@@ -36,6 +36,8 @@ window.addEventListener('keydown', (e) => {
     }
 });
 
+
+// Закрыть меню при клике вне его
 
 //burger menu
 document.addEventListener("DOMContentLoaded", function () {
