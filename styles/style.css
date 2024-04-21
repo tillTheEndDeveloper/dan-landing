@@ -39,7 +39,6 @@ header {
 }
 
 
-
 .logo img {
     max-height: 24px;
     display: flex;
@@ -53,7 +52,6 @@ nav {
     align-items: center;
     flex: 1;
 }
-
 
 
 .navbar-link {
@@ -98,18 +96,32 @@ nav {
 
 
 .user-info__field {
+    text-decoration: none;
     margin-left: 40px;
     color: #434455;
 }
 
-.intro {
+#email:hover {
+    color: #404BBF;
+    transition: 0.2s;
+}
+
+/*.intro {
     position: relative;
-    background: url("../img/intro.png") center/cover no-repeat;;
-    max-width: 100%;
-    height: 600px;
+    background: url("../img/intro.png") center/cover no-repeat;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.intro-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .intro-overlay {
@@ -118,8 +130,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #2E2F42B2;
-    opacity: 0.7;
+    background-color: rgba(46, 47, 66, 0.70);
 }
 
 .intro-content {
@@ -130,7 +141,7 @@ nav {
     align-items: center;
     justify-content: center;
 }
-
+*/
 .intro-content h2 {
     margin-bottom: 48px;
 }
@@ -150,9 +161,57 @@ nav {
     font-weight: 500;
     font-size: 16px;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
     box-shadow: 0px 4px 4px 0px #00000026;
 }
+
+.intro-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.70);
+}
+
+.intro {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.intro-image {
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, 0);
+    max-width: 100%;
+    min-height: 100%;
+}
+
+.intro-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.intro-content {
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+}
+
+
+.main-submit__btn:hover {
+    background-color: #404BBF;
+    transition: 0.2s;
+}
+
+/**/
 
 .modal {
     position: fixed;
@@ -241,6 +300,7 @@ nav {
     border: 1px solid #2E2F4266;
     border-radius: 4px;
     padding: 11px 16px;
+    transition: 0.3s;
     will-change: transform;
 }
 
@@ -248,6 +308,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.3s;
 }
 
 
@@ -255,8 +316,8 @@ nav {
     border: 1px solid #4D5AE5;
 }
 
-.modal__form-input-container input:focus + .modal__form-icon {
-    filter: invert(31%) sepia(50%) saturate(2616%) hue-rotate(223deg) brightness(93%) contrast(92%);
+.modal__form-input-container:focus-within .modal__form-icon {
+    filter: invert(41%) sepia(75%) saturate(6248%) hue-rotate(230deg) brightness(96%) contrast(85%);
 }
 
 
@@ -283,19 +344,31 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     margin-top: 16px;
 }
 
 .privacy-policy a {
-    margin-left: 0.25em;
+    color: #4D5AE5;
 }
 
-.privacy-policy__checkbox {
+.privacy-policy a:visited {
+    text-decoration: none;
+}
+
+#privacy-policy__checkbox {
     width: 16px;
     height: 16px;
     margin-right: 8px;
     border-radius: 2px;
     border: 1px solid #2E2F4266;
+    accent-color: #404BBF;
+}
+
+.privacy-policy__label {
+    height: 100%;
+    text-align: center;
+    line-height: normal;
 }
 
 .optional-menu__wrapper {
@@ -306,7 +379,7 @@ nav {
     width: 100%;
 }
 
-.optional-menu__wrapper .media-circles__wrapper{
+.optional-menu__wrapper .media-circles__wrapper {
     display: none;
 }
 
@@ -318,16 +391,41 @@ main {
 
 .modal__close-btn {
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
+    align-items: center;
+    min-width: 24px;
+    min-height: 24px;
     margin: 0 0 24px auto;
-    background-color: transparent;
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color: #E7E9FC;
     outline: none;
     z-index: 2;
     cursor: pointer;
+}
+
+.modal__close-btn span {
+    position: absolute;
+    width: 9px;
+    height: 1px;
+    background-color: #2E2F42;
+}
+
+.modal__close-btn span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.modal__close-btn span:nth-child(2) {
+    transform: rotate(-45deg);
+}
+
+.modal__close-btn:active {
+    background-color: #404BBF;
+    border-color: #404BBF;
+}
+
+.modal__close-btn:active span {
+    background-color: #ffffff;
 }
 
 .modal__form-title {
@@ -459,10 +557,20 @@ main {
     justify-content: center;
 }
 
+.customer-card:hover {
+    border-color: #404BBF;
+}
+
+.customer-card:hover img {
+    filter: brightness(0) saturate(100%) invert(30%) sepia(78%) saturate(961%) hue-rotate(207deg) brightness(88%) contrast(99%);
+}
+
 .portfolio-cards__wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 24px 48px; /* Отступы между карточками (справа и снизу) */
+    justify-content: center;
+    grid-template-columns: repeat(3, 360px); /* 3 columns, each 360px wide */
+    grid-auto-rows: 420px; /* Each row is 420px tall */
+    gap: 48px 24px; /* Gap between items */
 }
 
 
@@ -472,6 +580,37 @@ main {
     flex-direction: column;
     cursor: pointer;
     transition: 0.2s;
+}
+
+.portfolio-card__container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 360px;
+    height: 300px;
+}
+
+.portfolio-card__overlay {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: #F4F4FD;
+    padding: 40px 32px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: 100%;
+    background-color: #4D5AE5;
+    transform: translateY(100%);
+}
+
+
+.portfolio-card:hover .portfolio-card__overlay {
+    transform: translateY(0); /* Move the top image up by its own height to overlap the bottom image */
 }
 
 .portfolio-menu {
@@ -631,11 +770,20 @@ footer {
     justify-content: center;
 }
 
-.media-circle img {
+.media-circle:active {
+    background: #31D0AA;
+}
+
+
+.media-icon {
     width: 24px;
     height: 24px;
 }
 
+.media-icon__mini {
+    width: 16px;
+    height: 16px;
+}
 
 /*burger*/
 .header__burger-btn {
@@ -685,6 +833,18 @@ footer {
 
 /* tablet */
 @media (max-width: 768px) {
+
+    .intro-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
     .navbar {
         padding: 0 16px;
         justify-content: space-between;
@@ -710,6 +870,7 @@ footer {
         flex-direction: column;
         justify-content: space-between;
     }
+
 
     .user-info__field {
         font-size: 12px;
@@ -765,7 +926,7 @@ footer {
         margin-bottom: 12px;
     }
 
-    .user-info__field:last-child{
+    .user-info__field:last-child {
         margin-bottom: 0;
     }
 
@@ -804,9 +965,7 @@ footer {
         margin-bottom: 64px;
     }
 
-    footer {
-        margin-bottom: -72px;
-    }
+
 
     .footer-wrapper {
         padding: 96px 108px;
@@ -846,8 +1005,8 @@ footer {
     }
 
 
-    .optional-menu__wrapper .media-circles__wrapper{
-        padding: 40px 40px 0 0 ;
+    .optional-menu__wrapper .media-circles__wrapper {
+        padding: 40px 40px 0 0;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -865,24 +1024,24 @@ footer {
     }
 
     #burger-close-btn {
-        display: block;
+        display: flex;
         margin: 32px 32px 32px auto;
     }
 
-    .user-info{
+    .user-info {
         flex-direction: column-reverse;
     }
 
-    .user-info__field{
+    .user-info__field {
         margin: 0;
         padding: 0;
     }
 
-    .user-info__field:last-child{
+    .user-info__field:last-child {
         margin: 0 0 40px 0;
     }
 
-    #phone{
+    #phone {
         font-size: 36px;
         font-weight: 700;
         line-height: 40px;
@@ -932,12 +1091,12 @@ footer {
     }
 
 
-    .portfolio-cards__wrapper{
+    .portfolio-cards__wrapper {
         display: flex;
         flex-direction: column;
     }
 
-    .portfolio-menu{
+    .portfolio-menu {
         justify-content: left;
         gap: 16px 24px;
         flex-wrap: wrap;
@@ -947,7 +1106,7 @@ footer {
         margin: 0;
     }
 
-    .portfolio-card{
+    .portfolio-card {
         max-width: 396px;
         min-height: 400px;
     }
